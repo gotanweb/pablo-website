@@ -121,6 +121,11 @@
   color: #fceac6;
 }
 
+.mypic {
+  bottom: 0;
+
+}
+
 /*
 .title::before {
   position: absolute;
@@ -199,6 +204,10 @@
   font-size: 14px;
 }
 
+.certifications .certifications-courses li {
+  margin-right: 0.5rem; /* Equivalente a Bootstrap's me-2 */
+}
+
 /*-- SKILLS --*/
 .skills {
   padding: 30px;
@@ -223,6 +232,23 @@
 
 .experience-place {
   color: #0dcaf0;
+}
+
+/* CALL TO ACTION: Estilo personalizado para el botón de interés */
+.cta-text {
+  font-weight: 400;
+  font-weight: bold;
+  color:#fceac6
+}
+
+/* Estilo personalizado para el botón de interés */
+.cta-btn {
+  font-weight: 400;
+}
+
+/* Tamaño de las flechas */
+.cta-btn .fa-arrow-down {
+  font-size: 0.9em; 
 }
 
 /*-- PORTFOLIO --*/
