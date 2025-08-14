@@ -81,12 +81,7 @@ body.dark-mode .btn-dark-mode {
   font-size: 0.95rem;
 }
 
-/* Availability Status - AUMENTADA SEPARACIÓN */
-.availability-status {
-  margin-top: 20px !important; /* Añadido más margen superior */
-  margin-bottom: 15px !important;
-}
-
+/* Availability Status */
 .availability-status .badge {
   animation: pulse 2s infinite;
 }
@@ -209,12 +204,13 @@ body.dark-mode .btn-dark-mode {
   font-weight: 700;
 }
 
-/* Profile Picture - IMAGEN CIRCULAR Y ESTÁTICA */
 .mypic {
   bottom: 0;
-  border-radius: 50%; /* Hace la imagen circular */
-  object-fit: cover; /* Mantiene las proporciones */
-  /* Removido transform transition para hacer la imagen estática */
+  transition: transform 0.3s;
+}
+
+.mypic:hover {
+  transform: scale(1.05);
 }
 
 /* About Section */
@@ -266,15 +262,6 @@ body.dark-mode .btn-dark-mode {
   margin-bottom: 20px;
 }
 
-/* Dark Mode - Skills Section H5 FIX */
-body.dark-mode .skills-category h5 {
-  color: #e0e0e0 !important; /* Color más claro en dark mode */
-}
-
-body.dark-mode .skills-category h5 i {
-  color: var(--primary) !important; /* Ícono en color primario */
-}
-
 .skill-item {
   margin-bottom: 15px;
 }
@@ -290,10 +277,7 @@ body.dark-mode .skills-category h5 i {
   transition: width 2s ease-in-out;
 }
 
-/* Frontend Development Badges - COLOR MÁS OSCURO */
-.skill-icons .badge.bg-secondary {
-  background-color: #1a1a1a !important; /* Gris mucho más oscuro */
-  color: #ffffff !important;
+.skill-icons .badge {
   font-size: 0.9rem;
   padding: 8px 12px;
   margin: 5px;
@@ -326,10 +310,9 @@ body.dark-mode .skills-category h5 i {
   padding-bottom: 40px;
 }
 
-/* Timeline Marker - MOVIDO UN POCO A LA DERECHA */
 .timeline-marker {
   position: absolute;
-  left: -20px; /* Cambiado de -25px a -20px */
+  left: -25px;
   top: 5px;
   width: 12px;
   height: 12px;
@@ -377,22 +360,20 @@ body.dark-mode .skills-category h5 i {
   font-weight: bold;
 }
 
-/* Tech Stack Badges - TEXTO BLANCO Y HOVER MEJORADO */
 .tech-stack .badge {
   font-size: 0.85rem;
   padding: 5px 10px;
   margin: 3px;
-  background: rgba(0, 184, 123, 0.2) !important;
-  color: #ffffff !important; /* Texto blanco */
+  background: rgba(0, 184, 123, 0.1);
+  color: var(--primary);
   border: 1px solid var(--primary);
   transition: all 0.3s;
 }
 
 .tech-stack .badge:hover {
-  background: #ffc107 !important; /* Background amarillo en hover */
-  color: #2C3E50 !important; /* Texto oscuro en hover */
+  background: var(--primary);
+  color: #fff;
   transform: scale(1.05);
-  border-color: #ffc107;
 }
 
 /* Education Cards */
@@ -432,12 +413,6 @@ body.dark-mode .skills-category h5 i {
 .education-icon {
   margin-bottom: 20px;
   color: var(--primary);
-}
-
-/* Academic Degrees - TÍTULOS MÁS OSCUROS */
-.education-card h5 {
-  color: #1a1a1a !important; /* Color más oscuro para mejor legibilidad */
-  font-weight: 600;
 }
 
 .institution {
@@ -494,84 +469,25 @@ body.dark-mode .skills-category h5 i {
   color: var(--primary);
 }
 
-/* Certification Platforms - FONDO GRIS Y LOGOS EN COLOR */
-.certification-platforms {
-  background: #f8f9fa; /* Fondo gris claro */
-  padding: 30px 20px;
-  border-radius: 10px;
-  margin-top: 30px;
-}
-
 .platform-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .platform-logo {
-  height: 50px; /* Aumentado de 40px a 50px */
-  /* Removido filter: grayscale(100%); para mostrar en colores */
+  height: 40px;
+  filter: grayscale(100%);
   transition: all 0.3s;
-  opacity: 0.9;
+  opacity: 0.7;
 }
 
 .platform-logo:hover {
+  filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.15);
-}
-
-/* Digital Badge Section - NUEVA SECCIÓN */
-.digital-badge-section {
-  background: #f8f9fa;
-  padding: 30px 20px;
-  border-radius: 10px;
-  margin-top: 30px;
-  text-align: center;
-}
-
-.digital-badge-section h5 {
-  color: var(--secondary);
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.digital-badge-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.digital-badge-item {
-  text-align: center;
-  transition: all 0.3s;
-}
-
-.digital-badge-item img {
-  height: 120px;
-  width: auto;
-  margin-bottom: 15px;
-  transition: all 0.3s;
-}
-
-.digital-badge-item:hover img {
   transform: scale(1.1);
-}
-
-.digital-badge-item h6 {
-  color: var(--secondary);
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.digital-badge-item p {
-  color: #6c757d;
-  font-size: 0.9rem;
-  margin: 0;
 }
 
 /* Portfolio Section */
@@ -834,15 +750,6 @@ body.dark-mode .certification-category {
   background: rgba(30, 30, 30, 0.6);
 }
 
-/* Dark Mode - Certification Platforms Fix */
-body.dark-mode .certification-platforms {
-  background: rgba(30, 30, 30, 0.8);
-}
-
-body.dark-mode .digital-badge-section {
-  background: rgba(30, 30, 30, 0.8);
-}
-
 /* Responsive Improvements */
 @media (max-width: 768px) {
   .timeline {
@@ -854,7 +761,7 @@ body.dark-mode .digital-badge-section {
   }
   
   .timeline-marker {
-    left: -30px; /* Ajustado para móviles */
+    left: -35px;
   }
   
   .portfolio-stats .stat-item h3 {
@@ -869,14 +776,6 @@ body.dark-mode .digital-badge-section {
     width: 40px;
     height: 40px;
     font-size: 0.9rem;
-  }
-  
-  .platform-logo {
-    height: 40px; /* Más pequeño en móviles */
-  }
-  
-  .digital-badge-item img {
-    height: 100px; /* Más pequeño en móviles */
   }
 }
 

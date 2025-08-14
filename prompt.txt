@@ -1,0 +1,18 @@
+El sitio web que me desarrollaste se ve, excelente. Sin embargo necesito realizar una serie de cambios antes de proceder con las configuraciones relacionadas con el posicionamiento SEO.
+
+A continuación te detallo los cambios que necesito que se realicen:
+
+* Se ve linda la imagen ("profile.jpg") que se mueve a medida que scrolleo la pantalla sin embargo, termina tapando el texto de la sección. Por lo tanto prefiero que la imagen quede estática.
+* Quisiera que esa misma imagen ("profile.jpg") se vea circular en vez de cuadrada.
+* La sección "Availability Status" debe estar mas separada de la sección "Dynamic Typed Text", actualmente se ve muy pegada.
+* Todas las descripciones con la clase "badge bg-secondary m-1" en la sección "Backend Development" deben tener un color gris bastante mas oscuro visto que con el color de fondo no se llegan a leer los textos.
+* En la sección "Professional Experience", todos los items dentro dentro de la clase "tech-stack mt-3" deben tener el texto de color blanco ya que no se pueden leer. En el hover, a esos mismos items pueden tener el texto en color #2C3E50 y el background en color #ffc107.
+* Separar un poco el "timeline-marker" de la linea vertical, moviéndolo un poquito (no mucho) a la derecha.
+* Dentro de la sección "Academic Degrees" necesito que los textos "IT Engineering" y "Computer Technology Specialist" se vean en un color más oscuro visto que no se leen.
+* La subsección "Certification Platforms" debería tener un fondo gris claro tal como utilizaste para los títulos, adicionalmente, las imagenes deben mostrarse un poco más grandes y en colores, no en escala de grises, como se muestra actualmente.
+* Debajo de la subsección "Certification Platforms" quiero que haya otra subsección llamada "Digital Badge" que contenga la información de la Digital Badge de mi antiguo sitio (www.plondero.com), la imagen de referencia se encuentra en la ruta assets/img/certifications/digital-acumen-pwc.png
+
+Cambios en Dark Mode:
+* Dentro de la sección "Skills", los textos e imagenes dentro de las etiquetas h5 deben tener un color mas claro, visto que no se ven.
+
+Necesito que me pases realices todos los cambios necesarios para solucionar estos problemas. Me vas a pasar los archivos index.html, styles.css y main.js de a uno para que yo pueda copiar y pegar el código. Una vez que yo tenga el primer archivo listo, yo te aviso cuando estoy listo para el siguiente.

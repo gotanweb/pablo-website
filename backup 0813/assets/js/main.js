@@ -226,14 +226,11 @@
         }, 5000);
     }
 
-    // PARALLAX EFFECT REMOVIDO - La imagen de perfil ahora es estática
-    // El siguiente código ha sido comentado para hacer la imagen estática
-    /*
+    // Parallax Effect for Profile Image
     $(window).on('scroll', function() {
         var scrolled = $(window).scrollTop();
         $('.mypic').css('transform', 'translateY(' + (scrolled * 0.1) + 'px)');
     });
-    */
 
     // Add Active Class to Navigation based on scroll
     $(window).scroll(function() {

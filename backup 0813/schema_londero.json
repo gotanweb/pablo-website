@@ -1,0 +1,12 @@
+<script type="application/ld+json">
+{
+"@context": "https://Schema.org",
+"@type": "Person",
+"name": "Pablo Alejandro Londero",
+"image": "https://www.plondero.com/img/me.jpg",
+"sameAs": ["https://www.plondero.com/","https://www.linkedin.com/in/pablo-londero"],
+"alumniOf": ["https://www.fie.undef.edu.ar/","https://eneb.com/"],
+"gender": "Male",
+"nationality": "Argentinian"
+}
+</script>
