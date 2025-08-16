@@ -436,7 +436,7 @@ body.dark-mode .skills-category h5 i {
 
 /* Academic Degrees - TÍTULOS MÁS OSCUROS */
 .education-card h5 {
-  color: #1a1a1a !important; /* Color más oscuro para mejor legibilidad */
+  color: #00B87B !important; /* Color más oscuro para mejor legibilidad */
   font-weight: 600;
 }
 
@@ -495,7 +495,7 @@ body.dark-mode .skills-category h5 i {
 }
 
 /* Certification Platforms - FONDO GRIS Y LOGOS EN COLOR */
-.certification-platforms {
+.certification-platforms-section {
   background: #f8f9fa; /* Fondo gris claro */
   padding: 30px 20px;
   border-radius: 10px;
@@ -525,15 +525,15 @@ body.dark-mode .skills-category h5 i {
 
 /* Digital Badge Section - NUEVA SECCIÓN */
 .digital-badge-section {
-  background: #f8f9fa;
+  /*background: #f8f9fa;*/
   padding: 30px 20px;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
   margin-top: 30px;
   text-align: center;
 }
 
 .digital-badge-section h5 {
-  color: var(--secondary);
+  color: #f2f2f2;
   font-weight: 600;
   margin-bottom: 20px;
 }
