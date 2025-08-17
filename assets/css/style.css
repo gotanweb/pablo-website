@@ -214,6 +214,7 @@ body.dark-mode .btn-dark-mode {
   bottom: 0;
   border-radius: 50%; /* Hace la imagen circular */
   object-fit: cover; /* Mantiene las proporciones */
+  width: 50%;
   /* Removido transform transition para hacer la imagen estática */
 }
 
@@ -277,6 +278,7 @@ body.dark-mode .skills-category h5 i {
 
 .skill-item {
   margin-bottom: 15px;
+  color:var(--secondary);
 }
 
 .progress {
@@ -512,7 +514,7 @@ body.dark-mode .skills-category h5 i {
 }
 
 .platform-logo {
-  height: 50px; /* Aumentado de 40px a 50px */
+  height: 60px; /* Aumentado de 40px a 50px */
   /* Removido filter: grayscale(100%); para mostrar en colores */
   transition: all 0.3s;
   opacity: 0.9;
