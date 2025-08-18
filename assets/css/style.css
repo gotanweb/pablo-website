@@ -504,6 +504,10 @@ body.dark-mode .skills-category h5 i {
   margin-top: 30px;
 }
 
+.learning-platforms{
+  color: var(--dark);
+}
+
 .platform-logos {
   display: flex;
   flex-wrap: wrap;
@@ -531,7 +535,6 @@ body.dark-mode .skills-category h5 i {
   padding: 30px 20px;
   /*border-radius: 10px;*/
   margin-top: 30px;
-  text-align: center;
 }
 
 .digital-badge-section h5 {
