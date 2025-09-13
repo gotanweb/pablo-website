@@ -272,9 +272,14 @@ body.dark-mode .skills-category h5 {
   color: #e0e0e0 !important; /* Color más claro en dark mode */
 }
 
+body.dark-mode .skills-category span {
+  color: #e0e0e0 !important; /* Color más claro en dark mode */
+}
+
 body.dark-mode .skills-category h5 i {
   color: var(--primary) !important; /* Ícono en color primario */
 }
+/*--------------*/
 
 .skill-item {
   margin-bottom: 15px;
@@ -506,6 +511,10 @@ body.dark-mode .skills-category h5 i {
 
 .learning-platforms{
   color: var(--dark);
+}
+
+body.dark-mode .learning-platforms{
+  color: #2C3E50;
 }
 
 .platform-logos {
