@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-  --primary: #2F6FED;   /* Azul confianza */
+  --primary: #2f6fed;   /* Azul confianza */
   --secondary: #0B1B34; /* Marino profundo */
   --light: #F5F7FB;     /* Fondo claro */
   --dark: #0F172A;      /* Texto/fondo oscuro base en claro */
@@ -20,6 +20,7 @@ body.dark-mode {
   --secondary: #0A1022; /* Más profundo para UI */
   --light: #0D1325;     /* Paneles oscuros */
   --dark: #E8EEF9;      /* Texto claro en oscuro */
+  --light2: #fecf7f;
 
   background-color: #0B1020; /* Fondo principal oscuro */
   color: #E8EEF9;            /* Texto principal */
@@ -48,7 +49,7 @@ body.dark-mode {
 
 body.dark-mode .btn-dark-mode {
   background-color: var(--light2);
-  border-color: var(--light);
+  border-color: var(--light2);
   color: var(--secondary);
 }
 

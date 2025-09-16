@@ -193,26 +193,39 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual EmailJS or backend integration)
-            setTimeout(() => {
-                // For demo purposes - you would integrate with EmailJS here
-                // emailjs.send('service_id', 'template_id', {
-                //     from_name: name,
-                //     from_email: email,
-                //     subject: subject,
-                //     message: message
-                // }).then(function(response) {
-                //     showFormMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
-                //     contactForm.reset();
-                // }, function(error) {
-                //     showFormMessage('Failed to send message. Please try again.', 'danger');
-                // });
-                
-                showFormMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
-                contactForm.reset();
-                submitBtn.innerHTML = originalBtnText;
+            // Dentro del listener contactForm.addEventListener('submit', async function(e) { ... })
+            try {
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Parámetros que deben coincidir con su plantilla de EmailJS
+            const templateParams = {
+                to_email: 'pablo.londero88@gmail.com',  // o fije el destinatario en la plantilla
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message
+            };
+
+            // Envío con EmailJS
+            await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
+
+            showFormMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+            contactForm.reset();
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            } catch (error) {
+            console.error(error);
+            showFormMessage('Failed to send message. Please try again.', 'danger');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.innerHTML = 'Send';
                 submitBtn.disabled = false;
-            }, 2000);
+  }
+}
+
         });
     }
     
