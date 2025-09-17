@@ -157,22 +157,19 @@
         });
     }
 
-    // Form Validation and Submission
+    // Form Validation and Submission - UPDATED VERSION
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
-    
-    // Initialize EmailJS (replace with your actual public key)
-    // emailjs.init("YOUR_PUBLIC_KEY"); // You need to replace this with your EmailJS public key
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
             
             // Basic validation
             if (!name || !email || !subject || !message) {
@@ -193,39 +190,36 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
             submitBtn.disabled = true;
             
-            // Dentro del listener contactForm.addEventListener('submit', async function(e) { ... })
-            try {
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'Sending...';
-            submitBtn.disabled = true;
-
-            // Parámetros que deben coincidir con su plantilla de EmailJS
-            const templateParams = {
-                to_email: 'pablo.londero88@gmail.com',  // o fije el destinatario en la plantilla
-                from_name: name,
-                from_email: email,
-                subject: subject,
-                message: message
-            };
-
-            // Envío con EmailJS
-            await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams);
-
-            showFormMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
-            submitBtn.innerHTML = originalBtnText;
-            submitBtn.disabled = false;
-            } catch (error) {
-            console.error(error);
-            showFormMessage('Failed to send message. Please try again.', 'danger');
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.innerHTML = 'Send';
+            // Create FormData object
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('subject', subject);
+            formData.append('message', message);
+            
+            // Send AJAX request to PHP
+            fetch('assets/php/send_email.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showFormMessage(data.message, 'success');
+                    contactForm.reset();
+                } else {
+                    showFormMessage(data.message, 'danger');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showFormMessage('An error occurred while sending the message. Please try again.', 'danger');
+            })
+            .finally(() => {
+                // Restore button state
+                submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
-  }
-}
-
+            });
         });
     }
     
@@ -234,9 +228,15 @@
         formMessage.textContent = message;
         formMessage.classList.remove('d-none');
         
-        setTimeout(() => {
-            formMessage.classList.add('d-none');
-        }, 5000);
+        // Auto-hide success messages after 5 seconds, keep error messages visible
+        if (type === 'success') {
+            setTimeout(() => {
+                formMessage.classList.add('d-none');
+            }, 5000);
+        }
+        
+        // Scroll to message
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     // PARALLAX EFFECT REMOVIDO - La imagen de perfil ahora es estática

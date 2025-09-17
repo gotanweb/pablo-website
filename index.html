@@ -120,8 +120,8 @@
                         
                         <!-- Action Buttons -->
                         <div class="d-flex align-items-end justify-content-between border-top">
-                            <a href="https://1drv.ms/b/c/d5c2d7a177f587de/EaFTlsd2WfRIpP61vTx1iTUBUCB-5U4SbrUtkEa46iZp2Q?e=YcWCyd" class="btn w-50 border-end" target="_blank" rel="noopener">
-                                <i class="fas fa-download me-1"></i>Download CV
+                            <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2IvYy9kNWMyZDdhMTc3ZjU4N2RlL0ViYUFad2xsSWJSS2dWNHBKenBzWEZRQjNUSUloRGdpMnVaMVY1M3N1M21LYmc%5FZT02c0Jwb3g&cid=D5C2D7A177F587DE&id=D5C2D7A177F587DE%21s096780b621654ab4815e29273a6c5c54&parId=D5C2D7A177F587DE%21s42ec3cd39e754423a927e4e3fae6c652&o=OneUp" class="btn w-50 border-end" target="_blank" rel="noopener">
+                                <i class="fas fa-download me-1"></i>Download Resume
                             </a>
                             <a href="#contact" class="btn w-50 btn-scroll">
                                 <i class="fas fa-message me-1"></i>Contact Me
@@ -854,29 +854,29 @@
                             </div>
                             
                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                                <form id="contactForm">
+                                <form id="contactForm" action="assets/php/send_email.php" method="POST">
                                     <div class="row g-3">
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0 bg-secondary" id="name" placeholder="Your Name" required>
+                                                <input type="text" class="form-control border-0 bg-secondary" name="name" id="name" placeholder="Your Name" required>
                                                 <label for="name">Your Name</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control border-0 bg-secondary" id="email" placeholder="Your Email" required>
+                                                <input type="email" class="form-control border-0 bg-secondary" name="email" id="email" placeholder="Your Email" required>
                                                 <label for="email">Your Email</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0 bg-secondary" id="subject" placeholder="Subject" required>
+                                                <input type="text" class="form-control border-0 bg-secondary" name="subject" id="subject" placeholder="Subject" required>
                                                 <label for="subject">Subject</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control border-0 bg-secondary" placeholder="Leave a message here" id="message" style="height: 150px" required></textarea>
+                                                <textarea class="form-control border-0 bg-secondary" placeholder="Leave a message here" name="message" id="message" style="height: 150px" required></textarea>
                                                 <label for="message">Message</label>
                                             </div>
                                         </div>
