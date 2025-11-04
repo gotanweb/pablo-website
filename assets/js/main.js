@@ -170,6 +170,14 @@
             const email = document.getElementById('email').value.trim();
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
+
+            // Human validation
+            const humanCheck = document.getElementById('humanCheck').checked;
+            if (!humanCheck) {
+              showFormMessage('You must confirm that you are not a robot.', 'danger');
+              return;
+            }
+
             
             // Basic validation
             if (!name || !email || !subject || !message) {
@@ -196,6 +204,7 @@
             formData.append('email', email);
             formData.append('subject', subject);
             formData.append('message', message);
+            formData.append('humanCheck', humanCheck ? "1" : "");
             
             // Send AJAX request to PHP
             fetch('assets/php/send_email.php', {

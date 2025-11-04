@@ -46,6 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (strlen($message) < 10 || strlen($message) > 1000) {
             throw new Exception("Message must be between 10 and 1000 characters.");
         }
+
+        $humanCheck = isset($_POST['humanCheck']) ? $_POST['humanCheck'] : '';
+        if ($humanCheck != '1') {
+            throw new Exception("You must confirm that you are not a robot.");
+        }
         
         // Email configuration
         $to = "pablo.londero88@gmail.com";
