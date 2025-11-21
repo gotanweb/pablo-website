@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Portfolio - Pablo Alejandro Londero</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio of projects by Pablo Alejandro Londero - Data Analyst and Software Engineer">
+    <meta name="description"
+        content="Portfolio of projects by Pablo Alejandro Londero - Data Analyst and Software Engineer">
     <meta name="keywords" content="Portfolio, Projects, Data Analytics, Web Development, ERP Systems">
     <meta name="author" content="Pablo Alejandro Londero">
-    
+
     <!-- Favicon -->
     <link href="../assets/img/favicon.png" rel="icon">
-    
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-    
+
     <!-- Libraries Stylesheet -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Template Stylesheet -->
     <link href="../assets/css/style.css" rel="stylesheet">
-    
+
     <style>
         /* Additional Portfolio Styles */
         .portfolio-hero {
@@ -39,7 +41,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .portfolio-hero::before {
             content: '';
             position: absolute;
@@ -50,12 +52,12 @@
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             opacity: 0.9;
         }
-        
+
         .portfolio-hero .container {
             position: relative;
             z-index: 1;
         }
-        
+
         .portfolio-title {
             font-size: 3.5rem;
             font-weight: 700;
@@ -64,7 +66,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         .portfolio-title::after {
             content: '';
             position: absolute;
@@ -75,17 +77,17 @@
             background: linear-gradient(90deg, #FFFFFF 0%, var(--primary) 100%);
             border-radius: 2px;
         }
-        
+
         .portfolio-subtitle {
             font-size: 1.2rem;
             color: #E8EEF9;
             margin-top: 25px;
         }
-        
+
         .portfolio-stats {
             margin-top: 40px;
         }
-        
+
         .stat-box {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -94,25 +96,25 @@
             text-align: center;
             transition: all 0.3s;
         }
-        
+
         .stat-box:hover {
             background: rgba(255, 255, 255, 0.15);
             transform: translateY(-5px);
         }
-        
+
         .stat-box h3 {
             font-size: 2.5rem;
             color: #FFFFFF;
             font-weight: 700;
             margin-bottom: 5px;
         }
-        
+
         .stat-box p {
             color: #E8EEF9;
             margin: 0;
             font-size: 0.9rem;
         }
-        
+
         /* Filter Buttons */
         .filter-buttons {
             margin-bottom: 40px;
@@ -121,7 +123,7 @@
             flex-wrap: wrap;
             gap: 10px;
         }
-        
+
         .filter-btn {
             padding: 10px 25px;
             border: 2px solid var(--border);
@@ -132,7 +134,7 @@
             transition: all 0.3s;
             font-weight: 500;
         }
-        
+
         .filter-btn:hover,
         .filter-btn.active {
             background: var(--primary);
@@ -141,18 +143,18 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(47, 111, 237, 0.3);
         }
-        
+
         body.dark-mode .filter-btn {
             background: var(--light);
             color: var(--dark);
         }
-        
+
         body.dark-mode .filter-btn:hover,
         body.dark-mode .filter-btn.active {
             background: var(--primary);
             color: var(--dark);
         }
-        
+
         /* Project Cards */
         .project-card {
             background: var(--light);
@@ -164,34 +166,34 @@
             display: flex;
             flex-direction: column;
         }
-        
+
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
-        
+
         body.dark-mode .project-card {
             background: var(--light);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
         .project-image {
             position: relative;
             overflow: hidden;
             height: 250px;
         }
-        
+
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
-        
+
         .project-card:hover .project-image img {
             transform: scale(1.1);
         }
-        
+
         .project-overlay {
             position: absolute;
             top: 0;
@@ -205,48 +207,48 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-        
+
         .project-card:hover .project-overlay {
             opacity: 1;
         }
-        
+
         .project-overlay .btn {
             margin: 0 5px;
         }
-        
+
         .project-content {
             padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        
+
         .project-content h4 {
             color: var(--dark);
             font-weight: 600;
             margin-bottom: 15px;
             font-size: 1.3rem;
         }
-        
+
         body.dark-mode .project-content h4 {
             color: var(--dark);
         }
-        
+
         .project-description {
             color: #64748B;
             font-size: 0.9rem;
             margin-bottom: 15px;
             line-height: 1.6;
         }
-        
+
         body.dark-mode .project-description {
             color: #475569;
         }
-        
+
         .project-tech {
             margin-top: auto;
         }
-        
+
         .tech-badge {
             display: inline-block;
             padding: 5px 12px;
@@ -257,133 +259,133 @@
             margin: 3px;
             font-weight: 500;
         }
-        
+
         /* Modal Styles */
         .project-modal .modal-dialog {
             max-width: 900px;
         }
-        
+
         .project-modal .modal-content {
             background: var(--light);
             border: none;
             border-radius: 15px;
         }
-        
+
         body.dark-mode .project-modal .modal-content {
             background: var(--light);
         }
-        
+
         .project-modal .modal-header {
             border-bottom: 2px solid var(--primary);
             padding: 25px;
         }
-        
+
         .project-modal .modal-title {
             color: var(--dark);
             font-weight: 700;
         }
-        
+
         body.dark-mode .project-modal .modal-title {
             color: var(--dark);
         }
-        
+
         .project-modal .modal-body {
             padding: 30px;
             color: var(--dark);
         }
-        
+
         body.dark-mode .project-modal .modal-body {
             color: var(--dark);
         }
-        
+
         .project-modal .btn-close {
             filter: none;
         }
-        
+
         body.dark-mode .project-modal .btn-close {
             filter: invert(1);
         }
-        
+
         /* Carousel in Modal */
         .modal-carousel {
             margin-bottom: 25px;
         }
-        
+
         .modal-carousel .carousel-item img {
             border-radius: 10px;
             width: 100%;
             height: 400px;
             object-fit: cover;
         }
-        
+
         .modal-carousel .carousel-control-prev,
         .modal-carousel .carousel-control-next {
             width: 50px;
         }
-        
+
         .modal-carousel .carousel-indicators button {
             background-color: var(--primary);
         }
-        
+
         .project-details h5 {
             color: var(--primary);
             font-weight: 600;
             margin-top: 20px;
             margin-bottom: 15px;
         }
-        
+
         .project-details p {
             line-height: 1.8;
             margin-bottom: 15px;
         }
-        
+
         .project-details ul {
             padding-left: 20px;
         }
-        
+
         .project-details li {
             margin-bottom: 8px;
         }
-        
+
         /* Call to Action */
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             padding: 80px 0;
             text-align: center;
         }
-        
+
         .cta-section h2 {
             color: #FFFFFF;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 20px;
         }
-        
+
         .cta-section p {
             color: #E8EEF9;
             font-size: 1.2rem;
             margin-bottom: 30px;
         }
-        
+
         .cta-section .btn {
             padding: 15px 40px;
             font-size: 1.1rem;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .portfolio-title {
                 font-size: 2.5rem;
             }
-            
+
             .stat-box h3 {
                 font-size: 2rem;
             }
-            
+
             .project-image {
                 height: 200px;
             }
-            
+
             .modal-carousel .carousel-item img {
                 height: 250px;
             }
@@ -393,7 +395,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
             <span class="sr-only">Loading...</span>
         </div>
@@ -406,7 +409,8 @@
     </button>
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background: var(--primary); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top"
+        style="background: var(--primary); box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);">
         <div class="container">
             <a href="../index.html" class="navbar-brand">
                 <h3 class="name mb-0">Pablo Londero</h3>
@@ -444,7 +448,7 @@
                 <h1 class="portfolio-title">Portfolio</h1>
                 <p class="portfolio-subtitle">Explore my recent projects and technical achievements</p>
             </div>
-            
+
             <!-- Stats -->
             <div class="portfolio-stats">
                 <div class="row g-4">
@@ -506,19 +510,23 @@
                 <div class="col-md-6 col-lg-4 project-item data-analytics" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Sales Analytics Dashboard">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                                alt="Sales Analytics Dashboard">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal1">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
-                                <a href="https://public.tableau.com/app/profile/pablo.alejandro.londero" target="_blank" class="btn btn-secondary btn-sm">
+                                <a href="https://public.tableau.com/app/profile/pablo.alejandro.londero" target="_blank"
+                                    class="btn btn-secondary btn-sm">
                                     <i class="fas fa-external-link-alt me-1"></i>Live Demo
                                 </a>
                             </div>
                         </div>
                         <div class="project-content">
-                            <h4>Sales Analytics Dashboard</h4>
-                            <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.</p>
+                            <h4>Montfrut | Website</h4>
+                            <p class="project-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Vivamus lacinia odio vitae vestibulum.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">Tableau</span>
                                 <span class="tech-badge">SQL</span>
@@ -532,16 +540,19 @@
                 <div class="col-md-6 col-lg-4 project-item erp" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="HR Management System">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                                alt="HR Management System">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal2">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="project-content">
                             <h4>HR Management System</h4>
-                            <p class="project-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <p class="project-description">Sed do eiusmod tempor incididunt ut labore et dolore magna
+                                aliqua. Ut enim ad minim veniam.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">PHP</span>
                                 <span class="tech-badge">Laravel</span>
@@ -556,9 +567,11 @@
                 <div class="col-md-6 col-lg-4 project-item automation" data-aos="zoom-in" data-aos-delay="300">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80" alt="Data Pipeline Automation">
+                            <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80"
+                                alt="Data Pipeline Automation">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal3">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
                                 <a href="https://github.com/plondero" target="_blank" class="btn btn-secondary btn-sm">
@@ -568,7 +581,8 @@
                         </div>
                         <div class="project-content">
                             <h4>ETL Data Pipeline</h4>
-                            <p class="project-description">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute.</p>
+                            <p class="project-description">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                ea commodo consequat duis aute.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">Python</span>
                                 <span class="tech-badge">Pandas</span>
@@ -582,16 +596,19 @@
                 <div class="col-md-6 col-lg-4 project-item web-dev" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&q=80" alt="E-commerce Platform">
+                            <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&q=80"
+                                alt="E-commerce Platform">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal4">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal4">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="project-content">
                             <h4>E-commerce Platform</h4>
-                            <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+                            <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit
+                                esse cillum dolore eu fugiat nulla.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">Laravel</span>
                                 <span class="tech-badge">Livewire</span>
@@ -605,16 +622,19 @@
                 <div class="col-md-6 col-lg-4 project-item data-analytics" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80" alt="Business Intelligence">
+                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80"
+                                alt="Business Intelligence">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal5">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal5">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="project-content">
                             <h4>BI Reporting System</h4>
-                            <p class="project-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.</p>
+                            <p class="project-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                qui officia deserunt mollit anim.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">Power BI</span>
                                 <span class="tech-badge">DAX</span>
@@ -628,16 +648,19 @@
                 <div class="col-md-6 col-lg-4 project-item erp automation" data-aos="zoom-in" data-aos-delay="300">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Payroll System">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80"
+                                alt="Payroll System">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal6">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal6">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="project-content">
                             <h4>Payroll Optimization Tool</h4>
-                            <p class="project-description">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore.</p>
+                            <p class="project-description">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+                                eiusmod tempor incididunt labore.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">Cegid</span>
                                 <span class="tech-badge">Oracle PL/SQL</span>
@@ -651,16 +674,19 @@
                 <div class="col-md-6 col-lg-4 project-item web-dev" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80" alt="Portfolio Website">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80"
+                                alt="Portfolio Website">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal7">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal7">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="project-content">
                             <h4>Corporate Website</h4>
-                            <p class="project-description">Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                            <p class="project-description">Ut enim ad minim veniam quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">HTML5</span>
                                 <span class="tech-badge">CSS3</span>
@@ -674,16 +700,19 @@
                 <div class="col-md-6 col-lg-4 project-item erp web-dev" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Inventory System">
+                            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
+                                alt="Inventory System">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal8">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal8">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="project-content">
                             <h4>Inventory Management System</h4>
-                            <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur.</p>
+                            <p class="project-description">Duis aute irure dolor in reprehenderit in voluptate velit
+                                esse cillum dolore fugiat nulla pariatur.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">PHP</span>
                                 <span class="tech-badge">MySQL</span>
@@ -694,19 +723,23 @@
                 </div>
 
                 <!-- Project 9: Machine Learning Model -->
-                <div class="col-md-6 col-lg-4 project-item data-analytics automation" data-aos="zoom-in" data-aos-delay="300">
+                <div class="col-md-6 col-lg-4 project-item data-analytics automation" data-aos="zoom-in"
+                    data-aos-delay="300">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80" alt="Machine Learning">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80"
+                                alt="Machine Learning">
                             <div class="project-overlay">
-                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal9">
+                                <button class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#projectModal9">
                                     <i class="fas fa-eye me-1"></i>View Details
                                 </button>
                             </div>
                         </div>
                         <div class="project-content">
                             <h4>Predictive Analytics Model</h4>
-                            <p class="project-description">Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id.</p>
+                            <p class="project-description">Excepteur sint occaecat cupidatat non proident sunt in culpa
+                                qui officia deserunt mollit anim id.</p>
                             <div class="project-tech">
                                 <span class="tech-badge">Python</span>
                                 <span class="tech-badge">Scikit-learn</span>
@@ -737,7 +770,8 @@
     <!-- Footer Start -->
     <footer class="wow fadeIn" data-wow-delay="0.1s">
         <div class="bg-secondary text-light text-center p-5">
-            <p class="mb-2">Crafted by Pablo Alejandro Londero, fueled by <i class="fas fa-heart text-danger"></i> and <i class="fas fa-coffee text-warning"></i></p>
+            <p class="mb-2">Crafted by Pablo Alejandro Londero, fueled by <i class="fas fa-heart text-danger"></i> and
+                <i class="fas fa-coffee text-warning"></i></p>
         </div>
     </footer>
     <!-- Footer End -->
@@ -746,7 +780,7 @@
     <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
     <!-- Project Modals -->
-    
+
     <!-- Modal 1: Sales Dashboard -->
     <div class="modal fade project-modal" id="projectModal1" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
@@ -759,34 +793,43 @@
                     <!-- Carousel -->
                     <div id="carousel1" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0"
+                                class="active"></button>
                             <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Dashboard View 1">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                                    alt="Dashboard View 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Dashboard View 2">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                                    alt="Dashboard View 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80" alt="Dashboard View 3">
+                                <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80"
+                                    alt="Dashboard View 3">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
-                    
+
                     <!-- Project Details -->
                     <div class="project-details">
                         <h5>Project Overview</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
                         <h5>Key Features</h5>
                         <ul>
                             <li>Real-time data visualization with interactive charts and graphs</li>
@@ -795,7 +838,7 @@
                             <li>Drill-down capabilities for detailed analysis</li>
                             <li>Export functionality for reports and presentations</li>
                         </ul>
-                        
+
                         <h5>Technologies Used</h5>
                         <p>
                             <span class="tech-badge">Tableau</span>
@@ -803,9 +846,11 @@
                             <span class="tech-badge">Python</span>
                             <span class="tech-badge">PostgreSQL</span>
                         </p>
-                        
+
                         <h5>Outcomes</h5>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Reduced reporting time by 60% and improved decision-making accuracy by providing real-time insights.</p>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum. Reduced reporting time by 60% and improved decision-making accuracy by
+                            providing real-time insights.</p>
                     </div>
                 </div>
             </div>
@@ -823,33 +868,41 @@
                 <div class="modal-body">
                     <div id="carousel2" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0"
+                                class="active"></button>
                             <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="HR System 1">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                                    alt="HR System 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="HR System 2">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80"
+                                    alt="HR System 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="HR System 3">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                                    alt="HR System 3">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
-                    
+
                     <div class="project-details">
                         <h5>Project Overview</h5>
-                        <p>Comprehensive HR management system designed to streamline employee lifecycle management, payroll processing, and performance tracking. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        
+                        <p>Comprehensive HR management system designed to streamline employee lifecycle management,
+                            payroll processing, and performance tracking. Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
                         <h5>Key Features</h5>
                         <ul>
                             <li>Employee information management and onboarding workflows</li>
@@ -858,7 +911,7 @@
                             <li>Leave and attendance management</li>
                             <li>Document management with secure access controls</li>
                         </ul>
-                        
+
                         <h5>Technologies Used</h5>
                         <p>
                             <span class="tech-badge">PHP</span>
@@ -867,9 +920,11 @@
                             <span class="tech-badge">Meta4 PeopleNet</span>
                             <span class="tech-badge">Bootstrap</span>
                         </p>
-                        
+
                         <h5>Outcomes</h5>
-                        <p>Successfully reduced payroll processing time by 25% and improved employee satisfaction through streamlined HR processes. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                        <p>Successfully reduced payroll processing time by 25% and improved employee satisfaction
+                            through streamlined HR processes. Sed ut perspiciatis unde omnis iste natus error sit
+                            voluptatem accusantium doloremque laudantium.</p>
                     </div>
                 </div>
             </div>
@@ -887,33 +942,41 @@
                 <div class="modal-body">
                     <div id="carousel3" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#carousel3" data-bs-slide-to="0"
+                                class="active"></button>
                             <button type="button" data-bs-target="#carousel3" data-bs-slide-to="1"></button>
                             <button type="button" data-bs-target="#carousel3" data-bs-slide-to="2"></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80" alt="Pipeline 1">
+                                <img src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80"
+                                    alt="Pipeline 1">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80" alt="Pipeline 2">
+                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80"
+                                    alt="Pipeline 2">
                             </div>
                             <div class="carousel-item">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Pipeline 3">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                                    alt="Pipeline 3">
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel3"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carousel3" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel3"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon"></span>
                         </button>
                     </div>
-                    
+
                     <div class="project-details">
                         <h5>Project Overview</h5>
-                        <p>Automated ETL pipeline designed to extract, transform, and load large volumes of data from multiple sources into a centralized data warehouse. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        
+                        <p>Automated ETL pipeline designed to extract, transform, and load large volumes of data from
+                            multiple sources into a centralized data warehouse. Quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+
                         <h5>Key Features</h5>
                         <ul>
                             <li>Automated data extraction from multiple APIs and databases</li>
@@ -922,7 +985,7 @@
                             <li>Error handling and logging for troubleshooting</li>
                             <li>Performance monitoring and optimization</li>
                         </ul>
-                        
+
                         <h5>Technologies Used</h5>
                         <p>
                             <span class="tech-badge">Python</span>
@@ -931,9 +994,10 @@
                             <span class="tech-badge">PostgreSQL</span>
                             <span class="tech-badge">Docker</span>
                         </p>
-                        
+
                         <h5>Outcomes</h5>
-                        <p>Reduced data processing time by 70% and eliminated manual data entry errors. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p>Reduced data processing time by 70% and eliminated manual data entry errors. Duis aute irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                     </div>
                 </div>
             </div>
@@ -952,13 +1016,15 @@
                     <div id="carousel4" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&q=80" alt="E-commerce">
+                                <img src="https://images.unsplash.com/photo-1661956602116-aa6865609028?w=800&q=80"
+                                    alt="E-commerce">
                             </div>
                         </div>
                     </div>
                     <div class="project-details">
                         <h5>Project Overview</h5>
-                        <p>Full-featured e-commerce platform with shopping cart, payment integration, and inventory management. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Full-featured e-commerce platform with shopping cart, payment integration, and inventory
+                            management. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <h5>Technologies Used</h5>
                         <p>
                             <span class="tech-badge">Laravel</span>
@@ -982,13 +1048,15 @@
                     <div id="carousel5" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80" alt="BI System">
+                                <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80"
+                                    alt="BI System">
                             </div>
                         </div>
                     </div>
                     <div class="project-details">
                         <h5>Project Overview</h5>
-                        <p>Comprehensive business intelligence reporting system with interactive dashboards and scheduled report generation.</p>
+                        <p>Comprehensive business intelligence reporting system with interactive dashboards and
+                            scheduled report generation.</p>
                         <h5>Technologies Used</h5>
                         <p>
                             <span class="tech-badge">Power BI</span>
@@ -1012,7 +1080,8 @@
                     <div id="carousel6" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Payroll">
+                                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80"
+                                    alt="Payroll">
                             </div>
                         </div>
                     </div>
@@ -1042,7 +1111,8 @@
                     <div id="carousel7" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80" alt="Website">
+                                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80"
+                                    alt="Website">
                             </div>
                         </div>
                     </div>
@@ -1072,13 +1142,15 @@
                     <div id="carousel8" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80" alt="Inventory">
+                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80"
+                                    alt="Inventory">
                             </div>
                         </div>
                     </div>
                     <div class="project-details">
                         <h5>Project Overview</h5>
-                        <p>Comprehensive inventory tracking system with real-time stock updates and automated reordering.</p>
+                        <p>Comprehensive inventory tracking system with real-time stock updates and automated
+                            reordering.</p>
                         <h5>Technologies Used</h5>
                         <p>
                             <span class="tech-badge">PHP</span>
@@ -1102,7 +1174,8 @@
                     <div id="carousel9" class="carousel slide modal-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80" alt="ML Model">
+                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80"
+                                    alt="ML Model">
                             </div>
                         </div>
                     </div>
@@ -1142,7 +1215,7 @@
             const updateCount = () => {
                 const current = parseInt(counter.innerText);
                 const increment = target / 100;
-                
+
                 if (current < target) {
                     counter.innerText = Math.ceil(current + increment);
                     setTimeout(updateCount, 20);
@@ -1150,7 +1223,7 @@
                     counter.innerText = target;
                 }
             };
-            
+
             // Start counting when element is in view
             const observer = new IntersectionObserver((entries) => {
                 if (entries[0].isIntersecting) {
@@ -1224,4 +1297,5 @@
         }, 100);
     </script>
 </body>
+
 </html>
